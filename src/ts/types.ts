@@ -1,3 +1,5 @@
 export interface IItem {
-    color: string
+    value: ItemValue
 }
+
+export type ItemValue = 'banana' | 'apple'
