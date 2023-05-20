@@ -1,8 +1,11 @@
 import THREE from 'three'
 
-export interface ICell {
+export interface GlobalItem {
     item: CellItem | null
     itemElement: BasicMesh | null
+}
+
+export interface ICell extends GlobalItem {
     element: BasicMesh
 }
 

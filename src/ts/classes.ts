@@ -4,9 +4,11 @@ export class Belt {
 
     public cells: ICell[] = []
     public length: number
+    public readonly height: number
 
-    constructor(length: number) {
+    constructor(length: number, height: number) {
         this.length = length
+        this.height = height
 
         Belt.instances.push(this)
     }
