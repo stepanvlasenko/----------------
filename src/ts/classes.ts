@@ -1,4 +1,4 @@
-import { ICell } from '@types'
+import { ICell, BasicMesh } from '@types'
 export class Belt {
     public static instances: Belt[] = []
 
@@ -11,10 +11,15 @@ export class Belt {
         Belt.instances.push(this)
     }
 
-    public setItem(index: number, item: any) {
-        this.cells[index].item = item
-    }
-    public removeItem(index: number) {
-        this.cells[index].item = null
+    public static getItemElements(): BasicMesh[] {
+        const elements: BasicMesh[] = []
+        Belt.instances.forEach((belt) => {
+            belt.cells.forEach((cell) => {
+                if (cell.itemElement) {
+                    elements.push(cell.itemElement)
+                }
+            })
+        })
+        return elements
     }
 }
