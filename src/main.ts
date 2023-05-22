@@ -20,7 +20,6 @@ camera.position.y = -3
 const geometry = new THREE.BoxGeometry(1, 1, 0.3)
 const material1 = new THREE.MeshBasicMaterial({ color: 0x383838 })
 const material2 = new THREE.MeshBasicMaterial({ color: 0x707070 })
-const material3 = new THREE.MeshBasicMaterial({ color: 0xffffff })
 
 
 const appleTexture = loader.load('/apple.png')
@@ -160,7 +159,7 @@ dragControls.addEventListener('dragend', (event) => {
             }
         })
     })
-    if (chosenCell) {
+    if (chosenCell!) {
         chosenCell.itemElement = itemElement
         chosenCell.item = itemElement.name
     }
